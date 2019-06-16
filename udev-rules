@@ -1,0 +1,7 @@
+udevadm info -n /dev/sdb -q property
+udevadm monitor
+
+Pre-installed udev rules
+/lib/udev/rules.d/60-block.rules
+
+ACTION=="add", SUBSYSTEM=="block", ENV{ID_FS_UUID}=="xxxxx", RUN+="/root/my-usb.sh $devpath $name"

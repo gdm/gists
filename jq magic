@@ -1,0 +1,10 @@
+# usefull when parse output frow aws cli
+
+# from https://github.com/stedolan/jq/issues/370
+jq '.Attributes[] | select (.Name == "public_ip") | .Value'
+
+# json to bash-style env
+jq  -r  'to_entries | .[] | .key + "=\"" + .value + "\""' | grep -P '^AWS_(REGION|ACCESS_KEY|SECRET|SESSION)'
+
+# parse CloudTail logs (from http://flaws2.cloud/defender3.htm )
+jq -cr '.Records[]|[.eventTime, .sourceIPAddress, .userIdentity.arn, .userIdentity.accountId, .userIdentity.type, .eventName]|@tsv' | sort

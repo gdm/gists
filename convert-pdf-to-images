@@ -1,0 +1,2 @@
+
+for i in {1..83} ; do echo $i ; pdftoppm file.pdf page-$i -png -f $i -singlefile ; done; 

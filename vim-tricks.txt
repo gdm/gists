@@ -1,0 +1,1 @@
+Change file encoding(helps with some errors in utf-8 encoding) :e ++enc=utf8

@@ -1,0 +1,19 @@
+hhvm.conf:
+
+check program check-hhvm with path "/etc/monit/bin/check-hhvm.sh"
+  if status != 0 then alert
+  if status != 0
+  then exec "/usr/sbin/service hhvm restart"
+  
+/etc/monit/bin/check-hhvm.sh:
+#!/bin/bash
+
+HOST=yourhost
+ts=$(date +%F-%H%M%S)
+response=$(curl --silent -I --resolve "www.${HOST}.com:443:127.0.0.1'  "https://www.${HOST}.com/?ping=$ts" | grep 'HTTP/1.1' | grep 200 )
+if [ -z "$response" ]
+then 
+    exit 1
+else 
+    exit 0
+fi

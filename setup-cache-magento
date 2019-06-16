@@ -1,0 +1,70 @@
+#!/bin/bash -xe
+
+VGNAME=eph
+
+# now we need to check that we use ephemeral disk as /dev/xvdb
+# its very naive check but better then nothing because operations above can be dangerous
+if ! lsblk | grep '^xvdb' | grep 75G > /dev/null ; then
+  echo "Problems with expectations for /dev/xvdb"
+  exit 1
+fi
+
+
+if ! vgdisplay -s $VGNAME &> /dev/null ; then
+  echo "No vg $VGNAME"
+  pvcreate /dev/xvdb
+  vgcreate -s 1G $VGNAME /dev/xvdb
+else
+  echo "VG $VGNAME exists"
+fi
+
+echo -n "noop" > /sys/block/xvdb/queue/scheduler
+
+# setup nginx cache
+if lvcreate -n nginx-cache -L 2G eph ; then
+  mkfs.ext4  /dev/eph/nginx-cache
+fi
+
+if ! findmnt /cache/nginx-cache/ &> /dev/null; then
+  systemctl stop nginx
+  rm -rf /cache/nginx-cache
+  mkdir /cache/nginx-cache/
+  mount -o discard,noatime,commit=600 /dev/eph/nginx-cache  /cache/nginx-cache/
+  chown www-data:root /cache/nginx-cache/
+  chmod 0700 /cache/nginx-cache/
+  systemctl start nginx
+fi
+
+# setup magentoo catalog-cache
+if lvcreate -n catalog-cache -L 6G eph ; then
+  mkfs.ext4 /dev/eph/catalog-cache
+fi
+
+if ! findmnt /cache/catalog-cache &> /dev/null; then
+  mkdir -p /cache/catalog-cache
+  mount -o discard,noatime,commit=600 /dev/eph/catalog-cache /cache/catalog-cache/
+  chown shop_production:shop_production /cache/catalog-cache/
+  chmod 0777 /cache/catalog-cache/
+  cd /home/shop_production/htdocs/media/catalog/product/
+  rm -rf cache
+  ln -s /cache/catalog-cache cache; chown shop_production:shop_production cache
+fi
+
+
+# setup main magento cache
+if lvcreate -n shop-cache -L 10G eph ; then
+  mkfs.ext4 /dev/eph/shop-cache
+fi
+
+if ! findmnt /cache/shop-cache &> /dev/null; then
+  mkdir -p /cache/shop-cache
+  mount -o discard,noatime,commit=600 /dev/eph/shop-cache /cache/shop-cache/
+  chown shop_production:shop_production /cache/shop-cache/
+  chmod 0777 /cache/shop-cache/
+  cd /home/shop_production/htdocs/var
+  rm -rf cache
+  ln -s /cache/shop-cache cache
+  chown shop_production:shop_production cache
+fi
+
+echo "All done"

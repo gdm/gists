@@ -1,0 +1,40 @@
+const _ = require('lodash');
+
+// sum of array's elements (lodash)
+_.sum([4, 2, 8, 6]);
+//or
+[1, 2, 3, 4].reduce((a, b) => a + b, 0)
+
+// max-min element of array
+Math.max( ...arr );
+
+// extract arrays
+var seasons = ['winter', 'spring', 'summer', 'autumn'];  
+var head, restArray;  
+[head, ...restArray] = seasons;
+
+// array contstruction with ...
+var numbers1 = [...initial, 5, 7];
+
+// native operations with array
+var myData = [];
+myData.push(1); // add at the end 
+myData.unshift(2); // add to the top 
+
+// variable interpolation
+var s = `hello ${my_name}`
+
+// iterate characters (from string)
+[...text].forEach(c => console.log(c))
+for (var x = 0, c=''; c = text.charAt(x); x++) {     console.log(c);  }
+// ES5 without the for loop:
+text.split('').forEach(function(c) {    console.log(c);  });
+// With the `of` operator
+for (const c of text) {    console.log(c) }
+
+// string functions: (see also https://www.w3schools.com/jsref/jsref_obj_string.asp )
+word.charCodeAt(x)
+
+// References:
+// 1. https://dmitripavlutin.com/how-three-dots-changed-javascript/
+// 2. JavaScript compatibility list http://kangax.github.io/compat-table/es2016plus/

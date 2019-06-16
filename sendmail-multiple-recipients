@@ -1,0 +1,23 @@
+# Send mail to multiple recipients 
+import smtplib
+import sys, os
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+
+msg = MIMEMultipart()
+
+msg['From'] = 'my.mail@mail.com'
+
+recipients = os.environ['MAILTO'].split(',')
+
+msg['To'] = ", ".join(recipients)
+msg['Subject'] = os.environ['MAILSUBJECT']
+message = os.environ['MAILMSG']
+msg.attach(MIMEText(message))
+
+mailserver = smtplib.SMTP('relay-smtp.mailrelay.com',25)
+mailserver.ehlo()
+
+mailserver.sendmail('my.mail@mail.com', recipients, msg.as_string())
+
+mailserver.quit()

@@ -1,0 +1,3 @@
+nvm install 11.9.0 --reinstall-packages-from=11.8.0
+nvm ls-remote
+du -sh ~/.nvm/versions/node/*

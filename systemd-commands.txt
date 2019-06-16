@@ -1,0 +1,68 @@
+Source: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+
+# most recently used/needed: journalctl -u nginx.service
+# kernel messages (the same as dmesg -T?): journalctl -k
+# monitoring journalctl -f, journalctl -n 20, 
+
+journalctl --utc
+# since most recent re/boot
+journalctl -b
+# 
+journalctl --list-boots
+# logs from  previous boot
+journalctl -b -1
+
+# config /etc/systemd/journald.conf
+[Journal]
+Storage=persistent
+
+# about systemtime
+timedatectl list-timezones
+timedatectl set-timezone zone
+# displays local time, utc, timezone, NTP sync status
+timedatectl status
+
+journalctl --since "2015-01-10" --until "2015-01-11 03:00"
+journalctl --since 09:00 --until "1 hour ago"
+
+journalctl -u nginx.service --since today
+journalctl -u nginx.service -u php-fpm.service --since today
+journalctl _UID=33 --since today
+man systemd.journal-fields
+
+journalctl -k
+# kernel messages 5 boots ago
+journalctl -k -b -5
+# only err
+journalctl -p err -b
+
+    0: emerg
+    1: alert
+    2: crit
+    3: err
+    4: warning
+    5: notice
+    6: info
+    7: debug
+
+journalclt --no-pager
+# prints unprintable characters
+
+# using json
+journalctl -b -u nginx -o json
+journalctl -b -u nginx -o json-pretty
+
+journalctl -a
+
+# disk size
+journalctl --disk-usage
+journalctl --vacuum-size=1G
+journalctl --vacuum-time=1years
+# limit journal expansion: /etc/systemd/journald.conf 
+    SystemMaxUse=: Specifies the maximum disk space that can be used by the journal in persistent storage.
+    SystemKeepFree=: Specifies the amount of space that the journal should leave free when adding journal entries to persistent storage.
+    SystemMaxFileSize=: Controls how large individual journal files can grow to in persistent storage before being rotated.
+    RuntimeMaxUse=: Specifies the maximum disk space that can be used in volatile storage (within the /run filesystem).
+    RuntimeKeepFree=: Specifies the amount of space to be set aside for other uses when writing data to volatile storage (within the /run filesystem).
+    RuntimeMaxFileSize=: Specifies the amount of space that an individual journal file can take up in volatile storage (within the /run filesystem) before being rotated.
+

@@ -1,0 +1,2 @@
+List deptree
+for i in `rpm -qa` ; do echo "Package [$i]:"; rpm -q --requires $i ; echo ; done

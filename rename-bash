@@ -1,0 +1,6 @@
+# rename files with complex names
+j=1
+for f in *.jpg ; do
+  echo "mv '$f' p${j}.jpg"
+  j=$((j+1))
+done

@@ -1,0 +1,7 @@
+
+AWS Lambda + Node Modules, no Docker required : https://medium.com/@haydnjmorris/aws-lambda-node-modules-no-docker-required-76443a0f6c4e
+Automate Custom EC2 AMIs: (python, terraform, docker): https://medium.com/devopslinks/automate-custom-ec2-amis-155af71fae7d
+
+NEWS about JAVA + Docker:
+https://blog.softwaremill.com/docker-support-in-new-java-8-finally-fd595df0ca54?gi=53e209ef5a04
+https://blog.docker.com/2018/04/improved-docker-container-integration-with-java-10/

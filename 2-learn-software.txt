@@ -1,0 +1,7 @@
+
+
+remind https://dianne.skoll.ca/projects/remind/
+
+vim
+procmail/fetchmail
+mutt

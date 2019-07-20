@@ -1,0 +1,8 @@
+
+
+
+tar -xzf /tmp/backup.tar.gz -C /home/centos --exclude root/crypt.loop .
+tar -czf /tmp/backup-root.tar.gz -C /root .
+tar -czf /tmp/backup-etc.tar.gz -C /etc .
+
+

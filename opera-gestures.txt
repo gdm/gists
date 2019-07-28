@@ -1,0 +1,17 @@
+Gestures (Right Click +)
+
+    Left: Go to previous page in history
+    Right: Go to next page in history
+    Up→Left: Go to parent directory
+    Up→Down: Refresh page
+    Up: Stop loading
+    Down (w/ link): Open link in a new tab
+    Down (w/o link): Open a new tab
+    Down→Up (w/ link): Open link in a new background tab
+    Down→Up (w/o link): Open a copy in a background tab
+    Wheel: Switch active tab
+    Down→Right: Close current tab
+    Down→Left: Minimize window
+    Up→Right: Maximize window
+    Right→Up: Restore recently closed tab/window (Extra Function; disabled in default)
+

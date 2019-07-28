@@ -1,2 +1,2 @@
-# gists
-Copy from gist.github.com for offline
+
+Use instead of gists from github

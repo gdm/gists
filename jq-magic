@@ -2,6 +2,8 @@
 
 # from https://github.com/stedolan/jq/issues/370
 jq '.Attributes[] | select (.Name == "public_ip") | .Value'
+# another for DO
+jq '.domains[] | select(.name=="my.domain") | .zone_file'
 
 # json to bash-style env
 jq  -r  'to_entries | .[] | .key + "=\"" + .value + "\""' | grep -P '^AWS_(REGION|ACCESS_KEY|SECRET|SESSION)'

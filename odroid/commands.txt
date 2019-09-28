@@ -1,0 +1,12 @@
+
+
+dd if=/dev/zero of=zero bs=1M
+
+archive disk
+dd if=/dev/hdb | gzip -c  > /image.img
+
+restore
+gunzip -c /image.img.gz | dd of=/dev/hdb
+
+
+

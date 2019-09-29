@@ -9,4 +9,13 @@ restore
 gunzip -c /image.img.gz | dd of=/dev/hdb
 
 
+  617  fdisk -l /dev/sdc > fdisk-l.txt
+  618  dd if=/dev/sdc1 | gzip -c > sdc1.img.gz
+  619  dd if=/dev/sdc2 | gzip -c > sdc2.img.gz
+  620  du -sh  sdc2.img.gz
+  621  dd if=/dev/sdc bs=512 count=1 > 512.bin
+  622  history 6 > hist.txt
+
+
+
 

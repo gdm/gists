@@ -1,0 +1,59 @@
+
+Sources: 
+https://linuxize.com/post/getting-started-with-tmux/  (has been translated to https://softdroid.net/nachalo-raboty-s-tmux )
+https://www.poftut.com/linux-tmux-tutorial-command-examples/
+
+## Basics (windows)
+Ctrl+b c Create a new window (with shell)
+Ctrl+b w Choose window from a list
+Ctrl+b 0 Switch to window 0 (by number )
+Ctrl+b , Rename the current window
+
+### Optional (windows)
+CTRL+b n  - move to next window
+CTRL+b p  - move to previous window
+
+## Panes
+Ctrl+b % Split current pane horizontally into two panes
+Ctrl+b " Split current pane vertically into two panes
+Ctrl+b o Go to the next pane
+Ctrl+b ; Toggle between the current and previous pane
+CTRL+b <arrow> - navigate to up/down/left/right pane
+Ctrl+b x KILL the current pane
+Ctrl+b q Show pane numbers (TODO: add navigate to pane by number)
+
+## Copy mode
+CTRL+b [  - Enter to copy mode
+CTRL+<space>  - Set start point (TODO: test, doesn't work for me)
+Alt+w  - set end point
+CTRL+b ] - Paste
+
+## Sessions
+
+outside:
+Specify from command line: tmux new -s my_session
+tmux ls - list
+tmux a - attach
+
+inside:
+Detach: Ctrl+b d
+CTRL+b s - list sessions
+
+
+## Help/troubleshooting
+
+List of all commands: Ctrl+b ? (or :list-keys)
+
+
+Recommended ~/.tmux
+~/.tmux.conf
+
+# Improve colors
+set -g default-terminal 'screen-256color'
+
+# Set scrollback buffer to 10000
+set -g history-limit 10000
+
+# Customize the status line
+set -g status-fg  green
+set -g status-bg  black

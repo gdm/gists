@@ -1,0 +1,52 @@
+
+
+Some tips from  
+https://linuxhint.com/pacman_arch_linux/
+https://archlinuxarm.org/platforms/armv7/samsung/odroid-xu4
+https://wiki.archlinux.org/index.php/Pacman
+
+
+Initial setup (key gens + trust for  ARM only)
+pacman-key --init
+pacman-key --populate archlinuxarm
+
+Sync the files db: pacman -Fy
+Update database pacman -Sy , force - add extra y : pacman -Syy
+Upgrade software pacman -Syu (combine with prev task: pacman -Syyu )
+Installing package: pacman -S  pkgname (only download pacman -Sw , to /var/cache/pacman/pkg)
+Install (offline) pacman -U <package_name>.tar.xz
+Search: pacman -Ss <search_term>
+Config file for pacman: /etc/pacman.conf
+List all available packages pacman -Ssq | grep python
+List all installed packages: pacman -Q (with detailed info pacman -Qi <package_name>)
+Latest (remote?) info about package: pacman -Si <package_name>
+pacman -Si | grep -e ‘Name’ -e ‘Download Size’ -e ‘Installed Size’
+Uninstall: pacman -R <package_name>
+Uninstall with all dependencies: pacman -Rs <package_name>
+Force remove (dangerous) pacman -Rdd <package_name>
+
+File belongs to package local pacman -Qo /path/to/file_name ; remote pacman -Fo
+Search for package containing a file : pacman -Fs pacman
+List all packages no longer required: pacman -Qdt ; + directly installed pacman -Qet
+
+
+More pac tools: pacman -S pacman-contrib
+cleanup cache, keep only one last version: paccache -rk1
+remove all unisnstalled: paccache -ruk0
+remove all except installed: pacman -Sc
+clean all  pacman -Scc
+
+----
+resque: mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev 
+pacman --sysroot /mnt -Syu
+
+
+Setup awesome WM
+https://wiki.archlinux.org/index.php/Awesome
+package: awesome
+setxkbmap -layout "dvorak,ua" -option "grp:alt_shift_toggle"
+
+
+
+
+ 

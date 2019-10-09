@@ -1,0 +1,18 @@
+
+
+python3
+
+virtualenv -p python3 envname
+
+AWS CLI v2 install:
+  pip install -e git://github.com/aws/aws-cli.git@v2#egg=awscli
+
+
+probably a new features for v2 aws cli
+  aws configure list
+
+
+  TODO: try on EC2 instance:
+  aws configure wizard
+
+

@@ -5,3 +5,10 @@ Automate Custom EC2 AMIs: (python, terraform, docker): https://medium.com/devops
 NEWS about JAVA + Docker:
 https://blog.softwaremill.com/docker-support-in-new-java-8-finally-fd595df0ca54?gi=53e209ef5a04
 https://blog.docker.com/2018/04/improved-docker-container-integration-with-java-10/
+
+Auth via AWS ALB
+https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/
+
+AWS IAM Federation
+
+WORM access (?)

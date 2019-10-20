@@ -1,2 +1,6 @@
 List deptree
 for i in `rpm -qa` ; do echo "Package [$i]:"; rpm -q --requires $i ; echo ; done
+
+
+Cert preps
+https://access.redhat.com/sites/default/files/attachments/processstates_20120831.pdf

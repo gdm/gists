@@ -1,0 +1,72 @@
+
+Notes from ML Online confirence (AWS)
+
+
+Popular frameworks: 
+TF
+Keras https://keras.io/why-use-keras/
+
+Amazon-adopted TF https://aws.amazon.com/tensorflow/
+
+Amazon Elastic Inference  Amazon Elastic Inference – GPU-Powered Deep Learning Inference Acceleration
+https://aws.amazon.com/blogs/aws/amazon-elastic-inference-gpu-powered-deep-learning-inference-acceleration/
+
+
+Managed Spot Training: Save Up to 90% On Your Amazon SageMaker Training Jobs (August 2019)
+https://aws.amazon.com/blogs/aws/managed-spot-training-save-up-to-90-on-your-amazon-sagemaker-training-jobs/
+
+
+Amazon SageMaker Ground Truth Keeps Simplifying Labeling Workflows (supports, texts, images)
+https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-keeps-simplifying-labeling-workflows/
+
+Amazon SageMaker RL – Managed Reinforcement Learning with Amazon SageMaker
+https://aws.amazon.com/blogs/aws/amazon-sagemaker-rl-managed-reinforcement-learning-with-amazon-sagemaker/
+
+AWS Solucitons https://aws.amazon.com/solutions/ - filterable list of solutions
+
+New ML amazon service for personalization customer's experieces (recommendations)
+Amazon Personalize is Now Generally Available
+https://aws.amazon.com/blogs/aws/amazon-personalize-is-now-generally-available/
+
+Amazon Forecast – Now Generally Available (Aug 2019)
+https://aws.amazon.com/blogs/aws/amazon-forecast-now-generally-available/
+
+
+ML Courses(free): https://aws.amazon.com/training/learning-paths/machine-learning/
+
+Deep lens (device) https://aws.amazon.com/deeplens/
+
+https://www.twitch.tv/aws/events
+
+Amazon EMR - Managed Hadoop (map-reduce), Apache Spark - replacement for Hadoop (faster)
+Amathon Athena - Managed Apache Presto
+
+Amazon Redshift Spectrum
+https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/
+
+Amazon QuickSight (report generation service)
+https://aws.amazon.com/quicksight/
+
+
+About basics for ML
+https://gitlab.com/alexcasalboni/aws
+
+AWS Cloud Development Kit Documentation (dev env in cloud for ML code)
+https://docs.aws.amazon.com/cdk/
+
+AWS Serverless Application Model (SAM)
+
+deeplearning.net - website
+
+Pre-sign Jupiter notebook URL
+
+Amazon SageMaker - notebook, traning job, transform job, deploy(?)
+
+CONDA AMI - Amazon AMI for Deep Learning
+https://aws.amazon.com/blogs/machine-learning/new-aws-deep-learning-amis-for-machine-learning-practitioners/
+
+Apache Zeppelin Notebook
+
+MNIST dataset
+https://github.com/aws/sagemaker-spark
+PCA - Principal Component Analysis

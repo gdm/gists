@@ -1,0 +1,4 @@
+
+Copy bootable ISO to USB
+
+dd bs=1M if=/tmp/Fedora-Everything-netinst-x86_64-32_Beta-1.2.iso of=/dev/sdb conv=fdatasync

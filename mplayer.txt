@@ -1,0 +1,11 @@
+
+
+iconv -f CP1251 -t UTF-8 Counterpart.S01E07.WEBRip.Rus.Eng.DV.LostFilm.srt > Counterpart.S01E07.WEBRip.Rus.Eng.DV.LostFilm.srt.utf8
+
+mp -subcp utf8 -aid 2 Counterpart.S01E07.WEBRip.Rus.Eng.DV.LostFilm.avi
+
+alias mp='mplayer -ao alsa:device=hw=1.0'
+
+
+~/.mplayer/config
+heartbeat-cmd="xscreensaver-command -deactivate"

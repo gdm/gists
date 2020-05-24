@@ -1,0 +1,32 @@
+
+
+Summary from https://www.cloudar.be/awsblog/aws-help-things-you-might-not-know-about-the-aws-cli/
+
+Note: version 2 of aws-cli oficially released in 2020
+
+TODO: review the mentioned info below / verify either its true for v2 + add some new features
+
+=== List of tricks
+
+By specifying source_profile in your .aws/config file, you can tell the AWS CLI to use credentials from one profile to assume the role_arn you configure in another profile. This also works in a chain of profiles and can include asking for an MFA token.
+
+You don’t have to get credentials from the .aws/credentials file, you can tell the CLI to get them from environment variables (this also works if you do not specify anything), instance metadata, or the ECS container role.
+
+There is a --debug flag, which gives you a lot of output to see everything that’s happening behind the scenes.
+
+In most cases you do not want that full debug output. Enabling history and using aws history show will give you the most relevant parts in an easy to read format.
+
+The CLI has the annoying habit of resolving all urls you give it. You can disable this with aws configure set cli_follow_urlparam false.
+
+You can make S3 uploads and downloads go a lot faster by tweaking the max_concurrent_requests. Or make it not exceed a certain speed with max_bandwith. See here for all options.
+
+The cli supports defining your own aliases. Look in this awslabs repository for examples.
+
+Instead of relying on an external tool (that needs to be installed), you can get specific fields from the response by using --query. Combine this with --output text to strip json-specific syntax.
+
+You can use completion in different shells.
+
+There are waiters you can use directly from the command line, so you do not have to write your own check-sleep loops in bash.
+
+Other useful cli tools include cfn-lint, aws-encryption-sdk, aws-shell and aws-vault
+

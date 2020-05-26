@@ -30,3 +30,9 @@ There are waiters you can use directly from the command line, so you do not have
 
 Other useful cli tools include cfn-lint, aws-encryption-sdk, aws-shell and aws-vault
 
+
+=== Links 
+
+
+aws s3 cli config https://docs.aws.amazon.com/cli/latest/topic/s3-config.html#cli-aws-help-s3-config
+                for v2: https://awscli.amazonaws.com/v2/documentation/api/latest/topic/s3-config.html

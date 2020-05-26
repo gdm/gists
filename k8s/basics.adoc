@@ -1,0 +1,39 @@
+
+=== Generic concepts
+
+Master nodes - manage, plan, scedule, monitor nodes
+  includes:
+    etcd cluster/server
+Worker nodes
+
+kube-scheduler
+controllers:
+  controller-manager
+    node-controller
+    replication-controller
+
+kube-apiserver - a primary management component of k8s
+
+docker(container runtime, others options are containerd, rkt) must be installed on all nodes (incl master)
+
+kubelet agent running on nodes (only worker ?), controlled by kube-apiserver which is also fetches status reports from kubelets
+
+kube-proxy - provides communication between containers (potentially on different worker nodes)
+
+
+
+
+
+=== etcd
+
+default port 
+https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/hardware.md
+https://lzone.de/cheat-sheet/etcd
+https://docs.cilium.io/en/v1.7/gettingstarted/k8s-install-external-etcd/
+prometheus exporter for etcd https://github.com/etcd-io/etcd/issues/11891 
+
+
+=== Other notes
+
+  https://docs.cilium.io/en/v1.7/intro/ Cilium is open source software for transparently securing the network connectivity between application services deployed using Linux container management platforms like Docker and Kubernetes.
+  https://beta.shodan.io/

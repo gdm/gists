@@ -21,3 +21,13 @@ Mount /var/lib/mysql as eph storage noatime,commit=60
 Backup in case of failure.
 Auto-restore in case of failure (Lambda check for released IP, notification about spot instance termination, service that monitors notification from AWS)
 Monitoring logs (in progress - CloudWatch + S3 ?)
+
+
+fast backup experiments
+
+time tar --create -C /backup/mysql/dumps . > /backup/test.tar
+time tar --create -C /backup/mysql/dumps . | pigz --fast  > /backup/test.tar.gz
+time tar --create -z -C /backup/mysql/dumps .  > /backup/test2.tar.gz
+
+
+

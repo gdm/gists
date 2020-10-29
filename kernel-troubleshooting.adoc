@@ -1,0 +1,4 @@
+
+
+perf record -g -a sleep 10
+perf report

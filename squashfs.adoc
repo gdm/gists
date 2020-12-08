@@ -1,0 +1,20 @@
+
+
+Tested for Amazon Linux2 (based on RHEL7) under arm
+
+as root
+yum groupinstall "Development Tools"
+yum install lz4-devel squashfs-tools lz4
+
+as user:
+git clone https://github.com/gdm/squashfs-tools-ng.git
+./autogen.sh
+./configure --with-lz4
+make
+sudo -i
+make install
+
+
+usage:
+tar -c -C . . | /usr/local/bin/tar2sqfs --compressor lz4 /tmp/test.sq
+

@@ -1,0 +1,3 @@
+Show resolution:
+  xwininfo -root |egrep 'Width:|Height:'
+

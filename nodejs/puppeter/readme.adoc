@@ -1,0 +1,8 @@
+= Asciidoctor
+// settings:
+
+
+https://www.toptal.com/puppeteer/headless-browser-puppeteer-tutorial[more examples]
+
+
+https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/README.adoc[Adoc example in github]

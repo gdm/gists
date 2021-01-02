@@ -2,6 +2,8 @@
 ```bash
 export AWS_CONFIG=dmgo
 export S3_BUCKET=bb
-ls | tac | xargs -I '{}' /bin/bash -c "tar -c -C '{}' .  | aws s3 cp - 's3://${S3_BUCKET}/ann/from-laptop-2020/Ternovaja/{}.tar'"; date
+ls | tac | xargs -I '{}' /bin/bash -c "tar -c -C '{}' .  | aws s3 cp - 's3://${S3_BUCKET}/path/{}.tar'"; date
 ```
 ```
+
+tar -c -C big_folder . | pv | aws s3 cp - 3://{{ S3_BUCKET }}/path/big_folder.tar

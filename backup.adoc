@@ -7,3 +7,22 @@ ls | tac | xargs -I '{}' /bin/bash -c "tar -c -C '{}' .  | aws s3 cp - 's3://${S
 ```
 
 tar -c -C big_folder . | pv | aws s3 cp - 3://{{ S3_BUCKET }}/path/big_folder.tar
+
+
+about ETags
+
+From https://docs.aws.amazon.com/cli/latest/topic/s3-faq.html
+  There are several conditions where the CLI is not able to verify checksums on downloads:
+
+  If the object was uploaded via multipart uploads
+  If the object was uploaded using server side encryption with KMS
+  If the object was uploaded using a customer provided encryption key
+  If the object is downloaded using range GetObject requests
+  
+From https://teppen.io/2018/06/23/aws_s3_etags/
+      For multipart uploads the ETag is the MD5 hexdigest of each part’s MD5 digest concatenated together, followed by the number of parts separated by a dash.
+      Example: d41d8cd98f00b204e9800998ecf8427e-2
+      hexmd5( md5( part1 ) + md5( part2 ) )-{ number of parts }
+
+
+      You explicitly opt in and set signature_version = s3v4 in your ~/.aws/config file.

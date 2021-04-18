@@ -1,0 +1,14 @@
+
+
+How to sync with upstream
+[source,bash]
+---
+# 1. Add upstream if absent
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+git fetch upstream
+
+git checkout master
+
+git merge upstream/master
+---

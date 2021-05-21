@@ -1,0 +1,9 @@
+
+function gcp {
+  git commit -a -m "$@"
+  git push
+}
+
+function dayx {
+  bash -c "expr $(expr $(date --date '2023-09-07' +%s) - $(date +%s)) / 86400"
+}

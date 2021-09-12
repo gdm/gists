@@ -4,6 +4,8 @@ Remove EOL
 :set binary
 :set noeol
 
+(or in 7.4+ version use : :set nofixendofline)
+
 
 ~/.vimrc for terminal in web
 

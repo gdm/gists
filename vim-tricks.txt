@@ -1,1 +1,27 @@
 Change file encoding(helps with some errors in utf-8 encoding) :e ++enc=utf8
+
+Remove EOL
+:set binary
+:set noeol
+
+(or in 7.4+ version use : :set nofixendofline)
+
+
+~/.vimrc for terminal in web
+
+source /usr/share/vim/vim81/defaults.vim
+set mouse=r
+filetype indent plugin off
+filetype indent off
+
+
+set ts=2
+set sts=2
+set expandtab
+set shiftwidth=2
+set ai
+
+colo murphy
+
+:nnoremap <C-b> <C-w>
+"------------------------------

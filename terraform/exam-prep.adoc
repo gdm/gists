@@ -21,12 +21,12 @@ This command does not check formatting (e.g. tabs vs spaces, newlines, comments 
 
 The following can be reported:
 
-invalid HCL syntax (e.g. missing trailing quote or equal sign)
-invalid HCL references (e.g. variable name or attribute which doesn't exist)
-same provider declared multiple times
-same module declared multiple times
-same resource declared multiple times
-invalid module name
-interpolation used in places where it's unsupported (e.g. variable, depends_on, module.source, provider)
-missing value for a variable (none of -var foo=... flag, -var-file=foo.vars flag, TF_VAR_foo environment variable, terraform.tfvars, or default value in the configuration)
+- invalid HCL syntax (e.g. missing trailing quote or equal sign)
+- invalid HCL references (e.g. variable name or attribute which doesn't exist)
+- same provider declared multiple times
+- same module declared multiple times
+- same resource declared multiple times
+- invalid module name
+- interpolation used in places where it's unsupported (e.g. variable, depends_on, module.source, provider)
+- missing value for a variable (none of -var foo=... flag, -var-file=foo.vars flag, TF_VAR_foo environment variable, terraform.tfvars, or default value in the configuration)
 

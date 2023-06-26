@@ -11,4 +11,22 @@ The terraform.tfvars.json file, if present.
 Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
 Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
 
+## Validate command
+
+Validate works at the level of checking your code for soundness, including loading modules and ensuring that variables are correctly named.
+
+If you only want the basic syntax of a local file, consider using terraform fmt -write=false. If the formatter is unable to parse the file, it will throw an error.
+
+This command does not check formatting (e.g. tabs vs spaces, newlines, comments etc.).
+
+The following can be reported:
+
+invalid HCL syntax (e.g. missing trailing quote or equal sign)
+invalid HCL references (e.g. variable name or attribute which doesn't exist)
+same provider declared multiple times
+same module declared multiple times
+same resource declared multiple times
+invalid module name
+interpolation used in places where it's unsupported (e.g. variable, depends_on, module.source, provider)
+missing value for a variable (none of -var foo=... flag, -var-file=foo.vars flag, TF_VAR_foo environment variable, terraform.tfvars, or default value in the configuration)
 

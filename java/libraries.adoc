@@ -1,3 +1,8 @@
 
 
 Template engine: https://freemarker.apache.org/docs/ref_builtins_number.html
+
+
+
+Kafka rest: https://github.com/confluentinc/kafka-rest
+

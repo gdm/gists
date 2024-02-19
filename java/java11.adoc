@@ -1,0 +1,10 @@
+
+# From java 11
+
+## How to save variable to file
+
+```
+        try {
+            Files.writeString(Path.of("/tmp/output.xml"), result);
+        } catch (IOException ex) {}
+```

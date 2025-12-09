@@ -1,0 +1,14 @@
+
+=== IPv4 ranges
+
+RFC 5737 TEST-NET ranges (not publicly routable)
+| Range               | Notes                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| **192.0.2.0/24**    | TEST-NET-1                                                                         |
+| **198.51.100.0/24** | TEST-NET-2                                                                         |
+| **203.0.113.0/24**  | TEST-NET-3 (often used when you want something that “looks like a real public IP”) |
+
+CGNAT stands for Carrier-Grade NAT (also called LSN – Large-Scale NAT), not publicly routable
+100.64.0.0/10 ((from 100.64.0.0 to 100.127.255.255)
+
+
